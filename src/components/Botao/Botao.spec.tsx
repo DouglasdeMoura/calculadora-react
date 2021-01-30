@@ -1,6 +1,12 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import Botao from './Botao';
 
+const props = {
+  label: 'test_label',
+  background: 'test_background',
+  color: 'test_color',
+}
+
 describe('<Botao>', () => {
   it('deve executar função no evento de onClick', () => {
     const handleOnClick = jest.fn();
@@ -8,7 +14,7 @@ describe('<Botao>', () => {
     render(
       <Botao
         onClick={handleOnClick}
-        label="test_label"
+        {...props}
       />
     );
 
@@ -23,7 +29,7 @@ describe('<Botao>', () => {
     render(
       <Botao
         onClick={() => {}}
-        label="test_label"
+        {...props}
         icone="♥"
       />
     );
