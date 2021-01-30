@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import botoes from './constants/botoes';
-import Botao from '../../components/Botao/Botao';
-import Visor from '../../components/Visor/Visor';
+import Botao from './components/Botao/Botao';
+import Visor from './components/Visor/Visor';
 import { CalculadoraAcoes } from './types/index';
 import { BotoesContainer, CalculadoraContainer } from './StyledComponents';
 import calculate from './helpers/calculate';

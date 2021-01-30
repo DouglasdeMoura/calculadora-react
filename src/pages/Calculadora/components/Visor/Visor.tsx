@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { VisorContainer } from './StyledComponents/';
-import { IProps } from './types/';
+import { VisorContainer } from './StyledComponents';
+import { IProps } from './types';
 
 const Visor: FC<IProps> = ({ expressao, resultado }) => {
   return (
