@@ -3,3 +3,9 @@ export interface ListaBotoes {
   background: string;
   color: string;
 }
+
+export enum CalculadoraAcoes {
+  limparVisor = 'C',
+  apagarUltimoItem = '⌫',
+  calcular = '=',
+}
