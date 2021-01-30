@@ -5,6 +5,7 @@ export const VisorContainer = styled.div`
   padding: 16px;
   background: #000;
   text-align: right;
+  box-sizing: border-box;
   
   > div {
     color: #808080;
