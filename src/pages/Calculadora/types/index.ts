@@ -8,4 +8,5 @@ export enum CalculadoraAcoes {
   limparVisor = 'C',
   apagarUltimoItem = '⌫',
   calcular = '=',
+  espaco = ' ',
 }

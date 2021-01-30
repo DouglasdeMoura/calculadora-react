@@ -4,13 +4,16 @@ import Botao from '../../components/Botao/Botao';
 import Visor from '../../components/Visor/Visor';
 import { CalculadoraAcoes } from './types/index';
 import { BotoesContainer, CalculadoraContainer } from './StyledComponents';
+import calculate from './helpers/calculate';
 
 const Calculadora = () => {
   const [expressao, setExpressao] = useState('');
   const [resultado, setResultado] = useState('');
 
   const calcular = (expressao: string) => {
-    return;
+    const res = calculate(expressao);
+    setResultado(res.toString());
+    setExpressao(expressao);
   }
 
   const limparVisor = () => {
@@ -26,15 +29,15 @@ const Calculadora = () => {
     const botaoClicado = event.currentTarget.innerText;
 
     if (botaoClicado === CalculadoraAcoes.calcular)
-      return calcular(expressao);
+      return calcular(resultado);
 
     if (botaoClicado === CalculadoraAcoes.limparVisor)
       return limparVisor();
 
     if (botaoClicado === CalculadoraAcoes.apagarUltimoItem)
       return apagarUltimoItem();
-    
-    setResultado(resultado + botaoClicado);
+
+    setResultado(`${resultado}${botaoClicado}`.replace('s', ' '));
   }
 
   return (
