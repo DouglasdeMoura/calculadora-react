@@ -1,16 +1,13 @@
 import React from 'react';
+import botoes from './constants/botoes';
 import Botao from '../../components/Botao/Botao';
 import Visor from '../../components/Visor/Visor';
 import { BotoesContainer, CalculadoraContainer } from './StyledComponents';
 
 const Calculadora = () => {
-  const botoes = [
-    '(', ')', '⌫', 'C',
-    7, 8, 9, '÷',
-    4, 5, 6, '×',
-    1, 2, 3, '-',
-    0, '.', '=', '+'
-  ];
+  const handleOnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const botaoClicado = event.currentTarget.innerText;
+  }
 
   return (
     <CalculadoraContainer>
@@ -19,10 +16,11 @@ const Calculadora = () => {
         {
           botoes.map(botao => (
             <Botao
-              onClick={() => {}}
-              label="2"
-              background="tomato"
-              color="white"
+              onClick={handleOnClick}
+              label={botao.label.toString()}
+              background={botao.background}
+              color={botao.color}
+              key={botao.label}
             />
           ))
         }

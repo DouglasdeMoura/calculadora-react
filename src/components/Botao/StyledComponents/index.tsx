@@ -13,4 +13,13 @@ export const BotaoContainer = styled.button<BotaoContainerProps>`
   border: 0;
   border-radius: 8px;
   font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
 `;

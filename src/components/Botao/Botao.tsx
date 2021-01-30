@@ -15,8 +15,10 @@ const Botao: FC<IProps> = ({
       background={background}
       color={color}
     >
-      {icone && <i>{icone}</i>}
-      {label}
+      <span>
+        {icone && <i>{icone}</i>}
+        {label}
+      </span>
     </BotaoContainer>
   );
 }
