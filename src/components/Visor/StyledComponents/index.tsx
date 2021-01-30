@@ -6,10 +6,12 @@ export const VisorContainer = styled.div`
   background: #000;
   text-align: right;
   box-sizing: border-box;
+  min-height: 87px;
   
   > div {
     color: #808080;
     font-size: 16px;
+    word-break: break-all;
   }
 
   div:last-child {
