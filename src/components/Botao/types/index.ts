@@ -5,5 +5,4 @@ export interface IProps {
   label: string;
   background: string;
   color: string;
-  icone?: string;
 }

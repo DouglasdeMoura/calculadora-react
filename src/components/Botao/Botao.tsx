@@ -5,7 +5,6 @@ import { IProps } from './types';
 const Botao: FC<IProps> = ({
   onClick,
   label,
-  icone,
   background,
   color,
 }) => {
@@ -16,7 +15,6 @@ const Botao: FC<IProps> = ({
       color={color}
     >
       <span>
-        {icone && <i>{icone}</i>}
         {label}
       </span>
     </BotaoContainer>

@@ -24,16 +24,4 @@ describe('<Botao>', () => {
 
     expect(handleOnClick).toBeCalled();
   });
-
-  it('deve exibir o ícone', () => {
-    render(
-      <Botao
-        onClick={() => {}}
-        {...props}
-        icone="♥"
-      />
-    );
-
-    screen.getByText('♥')
-  });
 });
