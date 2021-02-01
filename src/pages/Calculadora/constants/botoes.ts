@@ -1,12 +1,27 @@
-import { ListaBotoes } from '../types';
+import { CalculadoraAcoes, ListaBotoes } from '../types';
 import definirEstiloBotao from '../utils/definirEstiloBotao';
 
-const simbolos = [
-  '(', ')', '⌫', 'C',
-  7, 8, 9, '÷',
-  4, 5, 6, '×',
-  1, 2, 3, '-',
-  0, '.', '=', '+',
+export const simbolos = [
+  '(',
+  ')',
+  CalculadoraAcoes.apagarUltimoItem,
+  CalculadoraAcoes.limparVisor,
+  7,
+  8,
+  9,
+  CalculadoraAcoes.dividir,
+  4,
+  5,
+  6,
+  CalculadoraAcoes.multiplicar,
+  1,
+  2,
+  3,
+  CalculadoraAcoes.subtrair,
+  0,
+  '.',
+  CalculadoraAcoes.calcular,
+  CalculadoraAcoes.somar,
 ];
 
 const botoes: ListaBotoes[] = simbolos.map((simbolo) => {
