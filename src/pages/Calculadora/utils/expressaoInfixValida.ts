@@ -3,7 +3,7 @@ const expressaoInfixValida = (expressao: string): boolean => {
   if (expressao.slice(-1) !== ')' && isNaN(parseInt(expressao.slice(-1))))
     return false;
 
-  // Válida se todos os parênteses abertos são fechados posteriormente
+  // Valida se todos os parênteses abertos são fechados posteriormente
     const expressaoArr = expressao.split('');
   let abreParenteses = 0;
   let fechaParenteses = 0;
