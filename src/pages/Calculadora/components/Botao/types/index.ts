@@ -1,7 +1,6 @@
-import React from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-export interface IProps {
-  onClick(event: React.MouseEvent<HTMLButtonElement>): void;
+export interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;
   background: string;
   color: string;
