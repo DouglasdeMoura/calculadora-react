@@ -1,46 +1,36 @@
-# Getting Started with Create React App
+# React Calculator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple calculator built with React.
 
-## Available Scripts
 
-In the project directory, you can run:
+[Check the calculator working in the browser](https://douglasdemoura.github.io/calculadora-react/).
 
-### `yarn start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+You can use your keyboard to interact with the calculator:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Use <kbd>C</kbd>, <kbd>ESC</kbd> or <kbd>Delete</kbd> to clear the display;
+- Use number keys, parenthesis and <kbd>.</kbd> to input data.
 
-### `yarn test`
+## The solution
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The starting point for this calculator was a [workshop of programming languages](https://www.youtube.com/watch?v=h5aF9lyHe5Q) hosted by [Luciano Ramalho](https://ramalho.org) at [Garoa Hacker Clube](https://garoa.net.br) (way far from [my last attempt](https://github.com/DouglasdeMoura/javascript-calculator)). After watching the presentation, I've tried, unsucessfully, to read [John McCarthy's paper](http://www-formal.stanford.edu/jmc/recursive.pdf) on which [this algorithm](https://github.com/DouglasdeMoura/calculadora-react/blob/main/src/components/Calculadora/utils/evaluate.ts) is based on (if you want to dive in, [this article](http://www.paulgraham.com/rootsoflisp.html) by Paul Graham is a more accessible introduction to McCarthy's work).
 
-### `yarn build`
+After implementing the [evaluate function](https://github.com/DouglasdeMoura/calculadora-react/blob/main/src/components/Calculadora/utils/evaluate.ts), I've implemented [tokenizer](https://github.com/DouglasdeMoura/calculadora-react/blob/main/src/components/Calculadora/utils/tokenizer.ts), [operators](https://github.com/DouglasdeMoura/calculadora-react/blob/main/src/components/Calculadora/utils/operadores.ts) and an [infix-to-prefix function](https://github.com/DouglasdeMoura/calculadora-react/blob/main/src/components/Calculadora/utils/infixToPrefix.ts) (I'm not happy with this last one, therefore, it must change in the future). For the rest, is a React application started with [CRA](https://create-react-app.dev/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## TODO
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Use <kbd>←</kbd> or <kbd>↑</kbd> to go backwards in the input history;
+- Use <kbd>→</kbd> or <kbd>↓</kbd> to go forward in the input history;
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contribution
 
-### `yarn eject`
+Feel free to contribute with the solution and give me tips and counseling to make it better :)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Author
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+[Douglas Moura](http://douglasmoura.dev)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
