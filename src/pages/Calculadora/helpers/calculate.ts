@@ -1,6 +1,7 @@
 import evaluate from '../utils/evaluate';
 import expressaoInfixValida from '../utils/expressaoInfixValida';
 import infixToPrefix from '../utils/infixToPrefix';
+import operadores from '../utils/operadores';
 import tokenizer from '../utils/tokenizer';
 
 const calculate = (expression: string): (number | string) => {
@@ -13,8 +14,9 @@ const calculate = (expression: string): (number | string) => {
 
   return evaluate(
     tokenizer(
-      infixToPrefix(expression)
-    )
+      infixToPrefix(expression),
+    ),
+    operadores
   );
 }
 
