@@ -6,6 +6,7 @@ export const CalculadoraContainer = styled.div`
   width: 260px;
   border-radius: 8px;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.55) 0px 20px 68px;
 `;
 
 export const BotoesContainer = styled.div`
