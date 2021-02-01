@@ -11,9 +11,13 @@ const Calculadora = () => {
   const [resultado, setResultado] = useState('');
 
   const calcular = (expressao: string) => {
-    const res = calculate(expressao);
-    setResultado(res.toString());
-    setExpressao(expressao);
+    try {
+      const res = calculate(expressao);
+      setResultado(res.toString());
+      setExpressao(expressao);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   const limparVisor = () => {
