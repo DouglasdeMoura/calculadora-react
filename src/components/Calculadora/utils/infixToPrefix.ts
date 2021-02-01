@@ -12,7 +12,14 @@ const infixToPrefix = (expression: string): string => {
 
     if (element === '(') {
       closingParenthesis++;
-      formattedExpression += ` ${element}+ 0`;
+      formattedExpression += ` (+ 0`;
+
+      if (numbersQueue.length > 0 && operatorQueue.length === 0) {
+        formattedExpression += ` (* ${numbersQueue}`;
+        numbersQueue = '';
+        closingParenthesis++;
+      }
+
       continue;
     }
 

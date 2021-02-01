@@ -7,6 +7,7 @@ describe('infixToPrefix()', () => {
     expect(infixToPrefix('1+2+3')).toEqual('(+ 1 2 (+ 3))');
     expect(infixToPrefix('1+2-3')).toEqual('(+ 1 2 (- 3))');
     expect(infixToPrefix('1*(1+2)')).toEqual('(* 1 (+ 0 (+ 1 2)))');
+    expect(infixToPrefix('5(2-3)')).toEqual('(+ 0 (* 5 (- 2 3)))');
     expect(infixToPrefix('1*(1+2+(10*2))')).toEqual('(* 1 (+ 0 (+ 1 2 (+  (+ 0 (* 10 2))))))');
   });
 });
