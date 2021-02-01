@@ -13,7 +13,7 @@ const calculate = (expression: string): (number | string) => {
     .replaceAll(CalculadoraAcoes.dividir, '/')
     .replaceAll(CalculadoraAcoes.multiplicar, '*');
 
-  const resultado =  evaluate(
+  const resultado = evaluate(
     tokenizer(
       infixToPrefix(expression),
     ),
@@ -21,7 +21,7 @@ const calculate = (expression: string): (number | string) => {
   );
 
   if (isNaN(+resultado))
-    throw new Error('Erro ao calcular a expressão');
+    throw new Error('Verifique sua expressão');
 
   return resultado;
 }

@@ -10,6 +10,7 @@ import teclas from './constants/teclas';
 const Calculadora = () => {
   const [expressao, setExpressao] = useState('');
   const [resultado, setResultado] = useState('');
+  const [erro, setErro] = useState('');
   const calculadora = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -25,8 +26,16 @@ const Calculadora = () => {
       setResultado(res.toString());
       setExpressao(expressao);
     } catch (error) {
-      console.error(error);
+      exibeErro(error.toString());
     }
+  }
+
+  const exibeErro = (mensagem: string) => {
+    setErro(mensagem.replace('Error: ', ''));
+
+    setTimeout(() => {
+      setErro('');
+    }, 3000);
   }
 
   const limparVisor = () => {
@@ -96,7 +105,11 @@ const Calculadora = () => {
       onClick={handleOnClickAndSetFocus}
       ref={calculadora}
     >
-      <Visor expressao={expressao} resultado={resultado} />
+      <Visor
+        erro={erro}
+        expressao={expressao}
+        resultado={resultado}
+      />
       <BotoesContainer>
         <BotaoEscondidoParaAdicionarOFocoNaCalculadora />
         {

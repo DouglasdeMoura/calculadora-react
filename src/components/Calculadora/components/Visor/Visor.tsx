@@ -1,12 +1,17 @@
 import React, { FC } from 'react';
-import { VisorContainer } from './StyledComponents';
+import { ErroContainer, VisorContainer } from './StyledComponents';
 import { IProps } from './types';
 
-const Visor: FC<IProps> = ({ expressao, resultado }) => {
+const Visor: FC<IProps> = ({ erro, expressao, resultado }) => {
   return (
     <VisorContainer>
-      <div>{expressao}</div>
-      <div>{resultado}</div>
+      <div>
+        {erro && <ErroContainer>{erro}</ErroContainer>}
+        {expressao}
+      </div>
+      <div>
+        {resultado}
+      </div>
     </VisorContainer>
   );
 }
