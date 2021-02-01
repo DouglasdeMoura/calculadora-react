@@ -38,7 +38,7 @@ const Calculadora = () => {
     setResultado(resultado.slice(0, -1));
   }
 
-  const executarAcao =  (botaoClicado: string) => {
+  const executarAcao = (botaoClicado: string) => {
     if (botaoClicado === CalculadoraAcoes.calcular)
       return calcular(resultado);
 
@@ -65,6 +65,9 @@ const Calculadora = () => {
   }
 
   const handleOnKeyDown = (event: React.KeyboardEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+
     let tecla = event.key;
 
     if (tecla === 'Backspace')
