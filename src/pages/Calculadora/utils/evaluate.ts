@@ -1,6 +1,4 @@
-import operadores from './operadores';
-
-const evaluate = (tokens: (string | number)[]): (number | string) => {
+const evaluate = (tokens: (string | number)[], operadores: {}): (number | string) => {
   const head = tokens.shift();
 
   if (head === undefined)
@@ -21,7 +19,7 @@ const evaluate = (tokens: (string | number)[]): (number | string) => {
     const args = [];
 
     while (tokens[0] !== ')') {
-      args.push(evaluate(tokens));
+      args.push(evaluate(tokens, operadores));
     }
 
     tokens.shift(); // Remove o ')'
