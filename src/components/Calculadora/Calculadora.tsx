@@ -81,7 +81,7 @@ const Calculadora = () => {
 
     if (tecla === 'Backspace')
       tecla = CalculadoraAcoes.apagarUltimoItem;
-    else if (tecla === 'Delete')
+    else if (tecla === 'Delete' || tecla === 'ESC')
       tecla = CalculadoraAcoes.limparVisor;
     else if (tecla === 'Enter')
       tecla = CalculadoraAcoes.calcular;
