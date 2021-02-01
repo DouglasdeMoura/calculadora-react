@@ -1,3 +1,4 @@
+import { CalculadoraAcoes } from '../types';
 import evaluate from '../utils/evaluate';
 import expressaoInfixValida from '../utils/expressaoInfixValida';
 import infixToPrefix from '../utils/infixToPrefix';
@@ -9,15 +10,20 @@ const calculate = (expression: string): (number | string) => {
     throw new Error('Expressão inválida');
 
   expression = expression
-    .replaceAll('÷', '/')
-    .replaceAll('×', '*');
+    .replaceAll(CalculadoraAcoes.dividir, '/')
+    .replaceAll(CalculadoraAcoes.multiplicar, '*');
 
-  return evaluate(
+  const resultado =  evaluate(
     tokenizer(
       infixToPrefix(expression),
     ),
     operadores
   );
+
+  if (isNaN(+resultado))
+    throw new Error('Erro ao calcular a expressão');
+
+  return resultado;
 }
 
 export default calculate;
