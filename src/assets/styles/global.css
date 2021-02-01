@@ -9,9 +9,30 @@
 }
 
 html {
-  font: 16px/1.6 normal;
+  font: 16px/1.6 normal #333;
 }
 
 body {
   font-family: var(--default-font-family);
+  background:
+      linear-gradient(217deg, rgba(88,233,231,.8), rgba(255,0,0,0) 70.71%),
+      linear-gradient(127deg, rgba(182,200,247,.8), rgba(0,255,0,0) 70.71%),
+      linear-gradient(336deg, rgba(71,78,96,.8), rgba(0,0,255,0) 70.71%);
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }

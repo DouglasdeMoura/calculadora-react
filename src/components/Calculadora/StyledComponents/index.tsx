@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const CalculadoraContainer = styled.div`
   background: #1e1e1e;
-  margin: 0 auto;
+  margin: auto;
   width: 260px;
   border-radius: 8px;
   overflow: hidden;
